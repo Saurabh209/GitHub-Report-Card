@@ -1,15 +1,32 @@
+const mainBody = document.querySelector('main');
 const navbar = document.querySelector('.navbar');
+const userField = document.querySelector('.navbar-search')
 const toggleSwitch = document.getElementById('toggleSwitch');
 const button = document.querySelector('.button');
 const usernameInput = document.querySelector('.username');
 const usernameValidation = document.querySelector('.usernameValidation');
 const mainContainer = document.querySelector('.mainContainer');
+
 let username;
 let userProfile;
 let aboutSection;
 
 
+
 function main(){
+const newBtn = document.createElement('button');
+newBtn.setAttribute('type','submit');
+newBtn.setAttribute('class','button');
+newBtn.innerText='Clear';
+userField.appendChild(newBtn);
+
+newBtn.addEventListener('click',()=>{
+  window.location.reload();
+
+})
+
+
+
 mainContainer.classList.add('ContainerVisible');
 const leftArea = document.createElement("div");
 leftArea.classList.add('leftArea');
@@ -49,6 +66,7 @@ mainContainer.appendChild(rightArea);
 }
 
 function onclick(){
+  button.remove();
   username = usernameInput.value.trim();
   if(username === ''){
     alert("Kya bhoot ko search kr rha h ?? username to fill krle bhai pehle");
