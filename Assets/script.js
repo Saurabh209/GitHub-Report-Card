@@ -28,24 +28,3 @@ Promise.then((response)=>{
 
     console.log(data);
 })
-
-
-
-// fetch('https://api.github.com/user/Saurabh209', {
-//   headers: {
-//     'Authorization': 'Bearer your_access_token_here'
-//   }
-// })
-// .then(response => {
-//   if (response.ok) {
-//     console.log('Authorized!');
-//     // Process the response data
-//   } else {
-//     console.error('Unauthorized:', response.status, response.statusText);
-//     // Handle the error
-//   }
-// })
-// .catch(error => {
-//   console.error('Error:', error);
-//   // Handle the error
-// });
