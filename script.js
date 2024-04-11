@@ -1,6 +1,6 @@
-// const navbar = document.querySelector('.navbar');
-// const toggleSwitch = document.getElementById('toggleSwitch');
+const navbar = document.querySelector('.navbar');
+const toggleSwitch = document.getElementById('toggleSwitch');
 
-// toggleSwitch.addEventListener('click', () => {
-//   navbar.classList.toggle('dark-mode');
-// });
+toggleSwitch.addEventListener('change', () => {
+  navbar.classList.toggle('dark-mode');
+});
