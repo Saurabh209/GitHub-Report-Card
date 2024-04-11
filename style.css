@@ -1,6 +1,6 @@
 .navbar {
   background-color: #f2f2f2;
-  min-width: 130px;
+  min-width: 400px;
   color: #333;
   display: flex;
   justify-content: space-between;
@@ -141,12 +141,51 @@
 
 
 .mainContainer{
-  height:500px ;
-  width: 800px;
+  display: flex;
+  height:650px ;
+  width: 1200px;
 }
 
-
+.main{
+  min-width: 400px;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .ContainerVisible{
+
   border: 1px solid black;
+  border-radius: 10px;
+}
+.leftArea{
+  height: 98%;
+  width: 400px;
+  margin: 5px;
+  border: 1px solid rgb(255, 39, 219);
+  border-radius: 6px;
+}
+.userProfile{
+  margin-top: 20px;
+  margin-left: 50px;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  /* border: 1px solid black; */
+  overflow:hidden;
+}
+.imageConfig{
+  height: 300px;
+  width: 300px;
+  
 }
 
+
+
+.rightArea{
+  height: 98%;
+  width: 776px;
+  margin: 5px;
+  border: 1px solid green;
+  border-radius: 6px;
+}
