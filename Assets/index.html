@@ -1,29 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ignorable content</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub User Profile</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <style>
-        .error-message {
-          color: red;
-          font-weight: bold;
-        }
-      </style>
-    </head>
-    <body>
-      <div>
-        <input type="text" id="usernameInput" placeholder="Enter your username">
-        <p id="errorMessage" class="error-message"></p>
+  <div class="container">
+    <h1>GitHub User Profile</h1>
+    <input type="text" id="username" placeholder="Enter GitHub username">
+    <button id="search-btn">Search</button>
+    <div id="user-info" class="hidden">
+      <img id="profile-pic" alt="Profile Picture">
+      <h2 id="full-name"></h2>
+      <p id="username"></p>
+      <p id="bio"></p>
+      <div id="stats">
+        <div>
+          <h3>Repositories</h3>
+          <p id="repos"></p>
+        </div>
+        <div>
+          <h3>Followers</h3>
+          <p id="followers"></p>
+        </div>
+        <div>
+          <h3>Following</h3>
+          <p id="following"></p>
+        </div>
       </div>
-      <button id="submitButton">Submit</button>
-    
-
-
-
-    <script src="script.js"></script>
+      <h2>Repositories</h2>
+      <div id="repo-list-container">
+        <ul id="repo-list"></ul>
+        <div id="repo-details" class="hidden">
+          <h3 id="repo-name"></h3>
+          <p id="repo-description"></p>
+          <p>
+            <span>Language: </span><span id="repo-language"></span>
+          </p>
+          <p>
+            <span>Stars: </span><span id="repo-stars"></span>
+          </p>
+          <p>
+            <span>Forks: </span><span id="repo-forks"></span>
+          </p>
+        </div>
+      </div>
+      <h2>Commit Graph</h2>
+      <div id="commit-graph"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
