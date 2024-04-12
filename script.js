@@ -12,7 +12,6 @@ let userProfile;
 let aboutSection;
 
 
-
 function main(){
 const newBtn = document.createElement('button');
 newBtn.setAttribute('type','submit');
@@ -26,7 +25,6 @@ newBtn.addEventListener('click',()=>{
 })
 
 
-
 mainContainer.classList.add('ContainerVisible');
 const leftArea = document.createElement("div");
 leftArea.classList.add('leftArea');
@@ -38,13 +36,9 @@ leftArea.appendChild(userProfile);
 
 
 
-
 const rightArea = document.createElement('div');
 rightArea.classList.add('rightArea');
 mainContainer.appendChild(rightArea);
-
-
-
 
 
   let promise = fetch(`https://api.github.com/users/${username}`);
@@ -66,11 +60,12 @@ mainContainer.appendChild(rightArea);
 }
 
 function onclick(){
-  button.remove();
+  
   username = usernameInput.value.trim();
   if(username === ''){
-    alert("Kya bhoot ko search kr rha h ?? username to fill krle bhai pehle");
+    alert("abe username to fill krle bkl");
   } else {
+    button.remove();
   main();
   }
   
