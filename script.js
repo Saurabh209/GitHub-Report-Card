@@ -7,6 +7,8 @@ const usernameInput = document.querySelector('.username');
 const usernameValidation = document.querySelector('.usernameValidation');
 const mainContainer = document.querySelector('.mainContainer');
 
+const heading = document.querySelector('h1');
+
 let username;
 let userProfile;
 let aboutSection;
@@ -15,7 +17,7 @@ let aboutSection;
 function main(){
 const newBtn = document.createElement('button');
 newBtn.setAttribute('type','submit');
-newBtn.setAttribute('class','button');
+newBtn.setAttribute('class','clearButton');
 newBtn.innerText='Clear';
 userField.appendChild(newBtn);
 
@@ -52,6 +54,8 @@ mainContainer.appendChild(rightArea);
     image.src=responseData.avatar_url;
     image.classList.add('imageConfig');
     userProfile.appendChild(image);
+    
+
 })
 .catch((error)=>{
   console.log(error);
@@ -71,8 +75,17 @@ function onclick(){
   
 
 }
-button.addEventListener('click', onclick);
 
+// Dark-Light Mode 
+
+function switcher(){
+  console.log('working');
+}
+
+
+
+button.addEventListener('click', onclick);
+toggleSwitch.addEventListener('click' , switcher)
 
 
 
