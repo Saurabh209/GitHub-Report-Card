@@ -104,12 +104,24 @@ function main() {
   rightArea.appendChild(statusReport);
 
   statusReportData = document.createElement('iframe');
+
+  // statusReport
   // statusReportData.src=`https://my-stats-lemon.vercel.app/api?username=${username}&show_icons=true&theme=tokyonight&hide_border=true`;
+  
+  // Most language used 
   // statusReportData.src=`https://github-readme-stats.vercel.app/api/top-langs/?username=${username}&hide_progress=false`;
+ 
+  //Most languages used 
   // statusReportData.src=`https://github-readme-stats.vercel.app/api/top-langs/?username=${username}&layout=compact`;
+ 
+  // Useless dot graph
   // statusReportData.src=`https://ssr-contributions-svg.vercel.app/chart=calendar/?username=${username}/CatsJuice?chart=calendar&format=svg`;
+  
+  //Streak chart
   // statusReportData.src=`https://github-readme-streak-stats.herokuapp.com?user=${username}&card_width=486`;
-  statusReportData.src=`https://github-readme-activity-graph.vercel.app/graph?username=${username}&theme=github-compact`;
+
+  // contribution graph
+  // statusReportData.src=`https://github-readme-activity-graph.vercel.app/graph?username=${username}&theme=github-compact`;
   statusReportData.classList.add('statusConfig01');
 
   statusReport.appendChild(statusReportData);
