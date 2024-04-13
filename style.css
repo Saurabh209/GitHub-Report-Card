@@ -171,7 +171,7 @@ h1{
 
 .main{
   
-  min-width: 400px;
+  min-width: 800px;
   margin-top: 40px;
   display: flex;
   align-items: center;
@@ -279,4 +279,14 @@ h1{
   margin: 5px;
   /* border: 1px solid green; */
   border-radius: 6px;
+}
+
+.statusReport{
+  height: 200px;
+  width: 100%;
+}
+.statusConfig01{
+  width: 835px;
+  height:292px;
+  border: none;
 }

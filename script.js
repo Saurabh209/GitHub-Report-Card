@@ -10,6 +10,7 @@ const mainContainer = document.querySelector(".mainContainer");
 
 const heading = document.querySelector("h1");
 
+//public variables
 let username;
 let userProfile;
 let aboutSection;
@@ -18,6 +19,7 @@ let loginNameContainer;
 let bioContainerValue;
 let followers;
 let following;
+let statusReportData;
 
 
 // Main code
@@ -91,9 +93,31 @@ function main() {
 
   //Followers section end
 
+
+  //Right Container
   const rightArea = document.createElement("div");
   rightArea.classList.add("rightArea");
   mainContainer.appendChild(rightArea);
+
+  const statusReport = document.createElement('div');
+  statusReport.classList.add('statusReport');
+  rightArea.appendChild(statusReport);
+
+  statusReportData = document.createElement('iframe');
+  // statusReportData.src=`https://my-stats-lemon.vercel.app/api?username=${username}&show_icons=true&theme=tokyonight&hide_border=true`;
+  // statusReportData.src=`https://github-readme-stats.vercel.app/api/top-langs/?username=${username}&hide_progress=false`;
+  // statusReportData.src=`https://github-readme-stats.vercel.app/api/top-langs/?username=${username}&layout=compact`;
+  // statusReportData.src=`https://ssr-contributions-svg.vercel.app/chart=calendar/?username=${username}/CatsJuice?chart=calendar&format=svg`;
+  // statusReportData.src=`https://github-readme-streak-stats.herokuapp.com?user=${username}&card_width=486`;
+  statusReportData.src=`https://github-readme-activity-graph.vercel.app/graph?username=${username}&theme=github-compact`;
+  statusReportData.classList.add('statusConfig01');
+
+  statusReport.appendChild(statusReportData);
+
+
+
+
+
 
   let promise = fetch(`https://api.github.com/users/${username}`);
   promise
