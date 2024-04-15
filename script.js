@@ -31,6 +31,10 @@ function main() {
   newBtn.innerText = "Clear";
   userField.appendChild(newBtn);
 
+
+  // mainContainer.innerHTML=" ";
+
+
   //button click area
   newBtn.addEventListener("click", () => {
     window.location.reload();
@@ -104,6 +108,7 @@ function main() {
   rightArea.appendChild(statusReport);
 
   statusReportData = document.createElement('iframe');
+  
 
   // statusReport
   // statusReportData.src=`https://my-stats-lemon.vercel.app/api?username=${username}&show_icons=true&theme=tokyonight&hide_border=true`;
