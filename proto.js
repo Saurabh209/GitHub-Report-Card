@@ -1,7 +1,7 @@
 const list = document.querySelector(".list");
 
-let promise = fetch('https://api.github.com/users/Saurabh209/repos');
-promise.then((response)=>{
+let promise1 = fetch('https://api.github.com/users/Saurabh209/repos');
+promise1.then((response)=>{
     return response.json();
 }).then((data)=>{
     const repositories=[];
@@ -18,9 +18,8 @@ promise.then((response)=>{
         repoHolder.append(item);
         list.appendChild(repoHolder);
 
-
     }
-  
+
 });
 
 

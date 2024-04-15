@@ -164,7 +164,8 @@ h1{
 .mainContainer{
   display: flex;
   height:650px ;
-  width: 1200px;
+  width: 1390px;
+  background-color: #dbdbdb;
   /* rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset  */
   
 }
@@ -275,19 +276,27 @@ h1{
 }
 .rightArea{
   height: 98%;
-  width: 834px;
+  width: 1040px;
   margin: 5px;
   /* border: 1px solid green; */
   border-radius: 6px;
 }
 
 .statusReport{
-  height: 300px;
-  width: 100%;
-  border: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
 }
-.statusConfig01{
-  width: 835px;
-  height:292px;
-  border: none;
+.repoHolder{
+  height: 100%;
+  margin: 0px;
+  border-radius: 4px;
+  overflow: hidden;
+
+}
+.repoConfig{
+margin: 1px;
+height: 76px;
+width: 258px;
+border: none;
+margin: 0px;
 }

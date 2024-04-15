@@ -25,20 +25,20 @@ let statusReportData;
 // Main code
 
 function main() {
-  const newBtn = document.createElement("button");
-  newBtn.setAttribute("type", "submit");
-  newBtn.classList.add('clearButon');
-  newBtn.innerText = "Clear";
-  userField.appendChild(newBtn);
+  // const newBtn = document.createElement("button");
+  // newBtn.setAttribute("type", "submit");
+  // newBtn.classList.add('clearButon');
+  // newBtn.innerText = "Clear";
+  // userField.appendChild(newBtn);
 
 
-  // mainContainer.innerHTML=" ";
+  mainContainer.innerHTML=" ";
 
 
-  //button click area
-  newBtn.addEventListener("click", () => {
-    window.location.reload();
-  });
+  // //button click area
+  // newBtn.addEventListener("click", () => {
+  //   // window.location.reload();
+  // });
   
   // Main Container
   mainContainer.classList.add("ContainerVisible");
@@ -107,8 +107,28 @@ function main() {
   statusReport.classList.add('statusReport');
   rightArea.appendChild(statusReport);
 
-  statusReportData = document.createElement('iframe');
   
+  
+
+  let promise1 = fetch(`https://api.github.com/users/${username}/repos`);
+  promise1.then((res)=>{
+    return res.json();
+  }).then((recivedData)=>{
+    const repositories=[];
+    for(const repo of recivedData){
+      repositories.push(repo.name);
+    }
+    for(let index =0; index<(repositories.length); index++){
+      let repoHolder = document.createElement('div');
+      let item = document.createElement('iframe');
+      repoHolder.classList.add('repoHolder');
+      item.classList.add('repoConfig');
+      item.src=`https://github-readme-stats.vercel.app/api/pin/?username=${username}&repo=${repositories[index]}&description_lines_count=1`;
+      repoHolder.append(item);
+      statusReport.append(repoHolder);
+    }
+  })
+
 
   // statusReport
   // statusReportData.src=`https://my-stats-lemon.vercel.app/api?username=${username}&show_icons=true&theme=tokyonight&hide_border=true`;
@@ -127,9 +147,7 @@ function main() {
 
   // contribution graph
   // statusReportData.src=`https://github-readme-activity-graph.vercel.app/graph?username=${username}&theme=github-compact`;
-  statusReportData.classList.add('statusConfig01');
 
-  statusReport.appendChild(statusReportData);
 
 
 
@@ -167,7 +185,7 @@ function onclick() {
   if (username === "") {
     alert("abe username to fill krle bkl");
   } else {
-    button.remove();
+    // button.remove();
     main();
   }
 }
