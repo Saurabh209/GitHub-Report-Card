@@ -165,7 +165,7 @@ h1{
   display: flex;
   height:650px ;
   width: 1390px;
-  background-color: #dbdbdb;
+  background-color: #f1efef;
   /* rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset  */
   
 }
@@ -285,12 +285,16 @@ h1{
 .statusReport{
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 .repoHolder{
   height: 100%;
   margin: 0px;
   border-radius: 4px;
   overflow: hidden;
+  transition-duration: .3s;
+  transition-timing-function: ease-in-out;
 
 }
 .repoConfig{
@@ -299,4 +303,7 @@ height: 76px;
 width: 258px;
 border: none;
 margin: 0px;
+}
+.repoHolder:hover{
+  transform: scale(1.05);
 }
