@@ -21,11 +21,95 @@ let followers;
 let following;
 let statusReportData;
 
-
+let repoHolder;
 // Main code
 
 function main() {
-  // const newBtn = document.createElement("button");
+ 
+  let promise = fetch(`https://api.github.com/users/${username}`);
+  promise
+    .then((response) => {
+      if (response.status !== 200) {
+        // const head = document.createElement('div');
+        // mainContainer.innerHTML=" ";
+        // head.classList.add("head");
+        // mainContainer.classList.add('mainContent')
+        // head.innerText=`No Such user found with username:${username}`;
+        // mainContainer.append(head);
+        
+        mainContainer.innerHTML=`<div class="main_wrapper">
+        <div class="main">
+          <div class="antenna">
+            <div class="antenna_shadow"></div>
+            <div class="a1"></div>
+            <div class="a1d"></div>
+            <div class="a2"></div>
+            <div class="a2d"></div>
+            <div class="a_base"></div>
+          </div>
+          <div class="tv">
+            <div class="cruve">
+              <svg
+                xml:space="preserve"
+                viewBox="0 0 189.929 189.929"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns="http://www.w3.org/2000/svg"
+                version="1.1"
+                class="curve_svg">
+                <path
+                  d="M70.343,70.343c-30.554,30.553-44.806,72.7-39.102,115.635l-29.738,3.951C-5.442,137.659,11.917,86.34,49.129,49.13
+              C86.34,11.918,137.664-5.445,189.928,1.502l-3.95,29.738C143.041,25.54,100.895,39.789,70.343,70.343z"
+                ></path>
+              </svg>
+            </div>
+            <div class="display_div">
+              <div class="screen_out">
+                <div class="screen_out1">
+                  <div class="screen">
+                    <span class="notfound_text">404 User not found</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="lines">
+              <div class="line1"></div>
+              <div class="line2"></div>
+              <div class="line3"></div>
+            </div>
+            <div class="buttons_div">
+              <div class="b1"><div></div></div>
+              <div class="b2"></div>
+              <div class="speakers">
+                <div class="g1">
+                  <div class="g11"></div>
+                  <div class="g12"></div>
+                  <div class="g13"></div>
+                </div>
+                <div class="g"></div>
+                <div class="g"></div>
+              </div>
+            </div>
+          </div>
+          <div class="bottom">
+            <div class="base1"></div>
+            <div class="base2"></div>
+            <div class="base3"></div>
+          </div>
+        </div>
+        <div class="text_404">
+          <div class="text_4041">4</div>
+          <div class="text_4042">0</div>
+          <div class="text_4043">4</div>
+        </div>
+      </div>`;
+      throw new Error("No such user found");
+
+      }
+      return response.json();
+    })
+    .then((responseData) => {
+
+       // const newBtn = document.createElement("button");
   // newBtn.setAttribute("type", "submit");
   // newBtn.classList.add('clearButon');
   // newBtn.innerText = "Clear";
@@ -42,6 +126,7 @@ function main() {
   
   // Main Container
   mainContainer.classList.add("ContainerVisible");
+  mainContainer.style.backgroundColor='#f1efef'
   mainContainer.style.boxShadow='rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset '; 
   
   // left Area
@@ -118,18 +203,28 @@ function main() {
     for(const repo of recivedData){
       repositories.push(repo.name);
     }
+    console.log(repositories.length);
+    if(repositories.length>12){
+      console.log("overload");
+
+
+
+    }else{
     for(let index =0; index<(repositories.length); index++){
-      let repoHolder = document.createElement('div');
+      repoHolder = document.createElement('div');
       let item = document.createElement('iframe');
       repoHolder.classList.add('repoHolder');
       item.classList.add('repoConfig');
       item.src=`https://github-readme-stats.vercel.app/api/pin/?username=${username}&repo=${repositories[index]}&description_lines_count=1`;
       repoHolder.append(item);
       statusReport.append(repoHolder);
-    }
+    }}
   })
 
 
+
+
+  
   // statusReport
   // statusReportData.src=`https://my-stats-lemon.vercel.app/api?username=${username}&show_icons=true&theme=tokyonight&hide_border=true`;
   
@@ -154,15 +249,13 @@ function main() {
 
 
 
-  let promise = fetch(`https://api.github.com/users/${username}`);
-  promise
-    .then((response) => {
-      if (response.status !== 200) {
-        throw new Error("No such user found");
-      }
-      return response.json();
-    })
-    .then((responseData) => {
+
+
+
+
+
+
+
       const image = document.createElement("img");
       image.src = responseData.avatar_url;
       image.classList.add("imageConfig");
