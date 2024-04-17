@@ -205,11 +205,21 @@ function main() {
     }
     console.log(repositories.length);
     if(repositories.length>12){
-      console.log("overload");
-
+      mainContainer.style.width='1410px';
+      statusReport.style.overflow="scroll";
+      for(let index = 0; index<(repositories.length); index++){
+      repoHolder = document.createElement('div');
+      repoHolder.classList.add('manualRepoHolder');
+      let repoData =`${repositories[index]}`;
+      repoHolder.append((repoData));
+      statusReport.append(repoHolder);
+      
+    
+    }
 
 
     }else{
+      mainContainer.style.width='1374px';
     for(let index =0; index<(repositories.length); index++){
       repoHolder = document.createElement('div');
       let item = document.createElement('iframe');
@@ -218,8 +228,16 @@ function main() {
       item.src=`https://github-readme-stats.vercel.app/api/pin/?username=${username}&repo=${repositories[index]}&description_lines_count=1`;
       repoHolder.append(item);
       statusReport.append(repoHolder);
-    }}
-  })
+    }};
+
+
+
+
+  });
+
+
+
+
 
 
 

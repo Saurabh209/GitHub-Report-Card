@@ -204,8 +204,7 @@ h1{
 .mainContainer{
   display: flex;
   justify-content: center;
-  height:650px ;
-  width: 1390px;
+  height:650px;
   border-radius: 10px;
   /* background-color: #f1efef; */
   /* rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset  */
@@ -318,7 +317,7 @@ h1{
 }
 .rightArea{
   height: 98%;
-  width: 1100px;
+  width: 1110px;
   margin: 5px;
   /* border: 1px solid green; */
   border-radius: 6px;
@@ -327,10 +326,11 @@ h1{
 .statusReport{
   display: flex;
   flex-wrap: wrap;
+  max-height: 410px;
   /* align-items: center;
   justify-content: center;
-  height: 250px;
-  overflow: scroll; */
+  height: 250px; */
+
 } 
 .repoHolder{
   height: 100%;
@@ -350,4 +350,11 @@ margin: 0px;
 }
 .repoHolder:hover{
   transform: scale(1.05);
+}
+.manualRepoHolder{
+  height: 60px;
+  width: 172px;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin: 1px;
 }
