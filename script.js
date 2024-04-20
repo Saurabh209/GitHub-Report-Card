@@ -20,7 +20,7 @@ let bioContainerValue;
 let followers;
 let following;
 let statusReportData;
-
+let repoCount;
 let repoHolder;
 // Main code
 
@@ -188,8 +188,12 @@ function main() {
   rightArea.classList.add("rightArea");
   mainContainer.appendChild(rightArea);
 
+  repoCount = document.createElement('div');
+  repoCount.innerHTML=`Total Repositories: ${responseData.public_repos}`;
+  rightArea.append(repoCount);
   const statusReport = document.createElement('div');
   statusReport.classList.add('statusReport');
+  
   rightArea.appendChild(statusReport);
 
   
@@ -231,12 +235,11 @@ function main() {
     }};
 
 
-
-
   });
 
-
-
+  const visualStatusArea = document.createElement("div");
+  visualStatusArea.classList.add("visualStatusArea");
+  rightArea.append(visualStatusArea);
 
 
 
@@ -260,14 +263,6 @@ function main() {
 
   // contribution graph
   // statusReportData.src=`https://github-readme-activity-graph.vercel.app/graph?username=${username}&theme=github-compact`;
-
-
-
-
-
-
-
-
 
 
 
