@@ -241,6 +241,15 @@ function main() {
   visualStatusArea.classList.add("visualStatusArea");
   rightArea.append(visualStatusArea);
 
+  const upperVsiualStatusArea = document.createElement('div');
+  upperVsiualStatusArea.classList.add("upperVisualStatusArea");
+  visualStatusArea.append(upperVsiualStatusArea);
+
+  const lowerVisualStatusArea = document.createElement('div');
+  lowerVisualStatusArea.classList.add("lowerVisualStatusArea");
+  visualStatusArea.append(lowerVisualStatusArea);
+
+
 
 
 
