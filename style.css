@@ -1,3 +1,6 @@
+a{
+  text-decoration: none;
+}
 * {
   scrollbar-width: thin;
   scrollbar-color: #888 #f1f1f1;
@@ -322,6 +325,27 @@ h1{
   /* border: 1px solid green; */
   border-radius: 6px;
 }
+.repoCountHolder{
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.repoCount{
+  font-family: "Jersey 20", sans-serif;
+  width: 170px;
+  /* border: 1px solid black;
+  border-radius: 30px; */
+  text-align: center;
+  transition-duration: .6s;
+  transition-timing-function: ease-in-out;
+  transition-property:all ;
+}
+
+.repoCount:hover{
+  color: red;
+  
+}
 
 .statusReport{
   display: flex;
@@ -359,7 +383,7 @@ margin: 0px;
   margin: 1px;
 }
 .visualStatusArea{
-  height: 380px;
+  height: 370px;
   width: 100%;
   border: 1px solid black;
   display: flex;
@@ -367,12 +391,12 @@ margin: 0px;
   justify-content: space-evenly;
 }
 .upperVisualStatusArea{
-  height: 185px;
+  height: 180px;
   width: 100%;
   border: 1px solid black;
 }
 .lowerVisualStatusArea{
-  height: 185px;
+  height: 180px;
   width: 100%;
   border: 1px solid black;
 }

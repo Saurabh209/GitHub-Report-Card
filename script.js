@@ -188,9 +188,13 @@ function main() {
   rightArea.classList.add("rightArea");
   mainContainer.appendChild(rightArea);
 
+  repoCountHolder = document.createElement('div');
+  repoCountHolder.classList.add('repoCountHolder');
   repoCount = document.createElement('div');
-  repoCount.innerHTML=`Total Repositories: ${responseData.public_repos}`;
-  rightArea.append(repoCount);
+  repoCount.classList.add('repoCount');
+  repoCount.innerHTML=`<a href ="https://github.com/${username}?tab=repositories">Total Repositories: ${responseData.public_repos}</a>`;
+  repoCountHolder.append(repoCount);
+  rightArea.append(repoCountHolder);
   const statusReport = document.createElement('div');
   statusReport.classList.add('statusReport');
   
@@ -208,15 +212,29 @@ function main() {
       repositories.push(repo.name);
     }
     console.log(repositories.length);
+
+
     if(repositories.length>12){
-      mainContainer.style.width='1410px';
-      statusReport.style.overflow="scroll";
-      for(let index = 0; index<(repositories.length); index++){
-      repoHolder = document.createElement('div');
-      repoHolder.classList.add('manualRepoHolder');
-      let repoData =`${repositories[index]}`;
-      repoHolder.append((repoData));
-      statusReport.append(repoHolder);
+      mainContainer.style.width='1374px';
+      // statusReport.style.overflow="scroll";
+      for(let index = 0; index<12; index++){
+        repoHolder = document.createElement('div');
+      let item = document.createElement('iframe');
+        repoHolder.classList.add('repoHolder');
+        item.classList.add('repoConfig');
+        item.src=`https://github-readme-stats.vercel.app/api/pin/?username=${username}&repo=${repositories[index]}&description_lines_count=1`;
+        repoHolder.append(item);
+        statusReport.append(repoHolder);
+
+
+
+
+
+      // repoHolder = document.createElement('div');
+      // repoHolder.classList.add('manualRepoHolder');
+      // let repoData =`${repositories[index]}`;
+      // repoHolder.append((repoData));
+      // statusReport.append(repoHolder);
       
     
     }
