@@ -372,9 +372,7 @@ width: 258px;
 border: none;
 margin: 0px;
 }
-.repoHolder:hover{
-  transform: scale(1.05);
-}
+
 .manualRepoHolder{
   height: 43px;
   width: 172px;
@@ -385,7 +383,6 @@ margin: 0px;
 .visualStatusArea{
   height: 370px;
   width: 100%;
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -393,8 +390,31 @@ margin: 0px;
 .upperVisualStatusArea{
   height: 180px;
   width: 100%;
+  display: flex;
+}
+.upperVisualStatusArea_Left{
+  height: 100%;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.languageReport{
+  height: 100%;
+  width: 100%;
+  border: none;
+}
+.contributionReport{
+  height: 100%;
+  width: 100%;
+  border: none;
+}
+.upperVisualStatusArea_Right{
+  height: 100%;
+  width: 70%;
   border: 1px solid black;
 }
+
 .lowerVisualStatusArea{
   height: 180px;
   width: 100%;

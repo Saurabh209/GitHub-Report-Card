@@ -259,13 +259,33 @@ function main() {
   visualStatusArea.classList.add("visualStatusArea");
   rightArea.append(visualStatusArea);
 
-  const upperVsiualStatusArea = document.createElement('div');
-  upperVsiualStatusArea.classList.add("upperVisualStatusArea");
-  visualStatusArea.append(upperVsiualStatusArea);
+  const upperVisualStatusArea = document.createElement('div');
+  upperVisualStatusArea.classList.add("upperVisualStatusArea");
+  visualStatusArea.append(upperVisualStatusArea);
+
+  const upperVisualStatusArea_Left = document.createElement('div');
+  upperVisualStatusArea_Left.classList.add("upperVisualStatusArea_Left");
+  const languageReport = document.createElement('iframe');
+  languageReport.classList.add("languageReport");
+  languageReport.src=`https://github-readme-stats.vercel.app/api/top-langs/?username=${username}&layout=compact`;
+  upperVisualStatusArea_Left.append(languageReport);
+  upperVisualStatusArea.append(upperVisualStatusArea_Left);
+
+  const upperVisualStatusArea_Right = document.createElement('div');
+  upperVisualStatusArea_Right.classList.add("upperVisualStatusArea_Right");
+  const contributionReport = document.createElement('iframe');
+  contributionReport.classList.add("contributionReport");
+  contributionReport.src=`https://ssr-contributions-svg.vercel.app/_/${username}?weeks=25&widget_size=small`;
+  upperVisualStatusArea_Right.append(contributionReport);
+  upperVisualStatusArea.append(upperVisualStatusArea_Right);
 
   const lowerVisualStatusArea = document.createElement('div');
   lowerVisualStatusArea.classList.add("lowerVisualStatusArea");
   visualStatusArea.append(lowerVisualStatusArea);
+
+  
+
+
 
 
 
@@ -312,6 +332,9 @@ function main() {
       console.log(error);
     });
 }
+
+
+
 
 function onclick() {
   username = usernameInput.value.trim();
