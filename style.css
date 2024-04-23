@@ -1,4 +1,5 @@
 a{
+  color: black;
   text-decoration: none;
 }
 * {
@@ -208,7 +209,7 @@ h1{
 .mainContainer{
   display: flex;
   justify-content: center;
-  height:650px;
+  height:665px;
   border-radius: 10px;
   /* background-color: #f1efef; */
   /* rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset  */
@@ -351,7 +352,7 @@ h1{
 .statusReport{
   display: flex;
   flex-wrap: wrap;
-  max-height: 410px;
+  max-height: 240px;
   /* align-items: center;
   justify-content: center;
   height: 250px; */
@@ -397,10 +398,11 @@ margin: 0px;
 }
 .upperVisualStatusArea_Left{
   height: 100%;
-  width: 30%;
+  width: 45%;
   display: flex;
   align-items: center;
-
+  border: 1px solid rgb(234 225 225);
+  border-radius: 4px;
 }
 .languageReport{
   height: 100%;
@@ -423,5 +425,5 @@ margin: 0px;
 .lowerVisualStatusArea{
   height: 180px;
   width: 100%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }

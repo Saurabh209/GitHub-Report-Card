@@ -269,7 +269,7 @@ function main() {
   upperVisualStatusArea_Left.classList.add("upperVisualStatusArea_Left");
   const languageReport = document.createElement('iframe');
   languageReport.classList.add("languageReport");
-  languageReport.src=`https://github-readme-stats.vercel.app/api/top-langs/?username=${username}&layout=donut`;
+  languageReport.src=`https://github-readme-streak-stats.herokuapp.com/?user=${username}&hide_border=true&date_format=j%20M%5B%20Y%5D&card_width=486"`;
   upperVisualStatusArea_Left.append(languageReport);
   upperVisualStatusArea.append(upperVisualStatusArea_Left);
 
