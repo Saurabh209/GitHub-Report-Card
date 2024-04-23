@@ -42,6 +42,7 @@ a{
 
 
 body{
+  background-color: rgb(225, 225, 225);
   /* background-color: rgb(13,17,23) */
 }
 h1{
@@ -391,13 +392,15 @@ margin: 0px;
   height: 180px;
   width: 100%;
   display: flex;
+  align-items: center;
+  justify-content:space-evenly;
 }
 .upperVisualStatusArea_Left{
   height: 100%;
   width: 30%;
   display: flex;
   align-items: center;
-  justify-content: center;
+
 }
 .languageReport{
   height: 100%;
@@ -411,8 +414,10 @@ margin: 0px;
 }
 .upperVisualStatusArea_Right{
   height: 100%;
-  width: 70%;
-  border: 1px solid black;
+  width: 50%;
+  border: 1px solid rgb(234 225 225);
+  border-radius: 4px;
+  overflow: hidden;
 }
 
 .lowerVisualStatusArea{

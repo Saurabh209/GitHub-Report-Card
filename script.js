@@ -126,7 +126,7 @@ function main() {
   
   // Main Container
   mainContainer.classList.add("ContainerVisible");
-  mainContainer.style.backgroundColor='#f1efef'
+  mainContainer.style.backgroundColor='white'
   mainContainer.style.boxShadow='rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset '; 
   
   // left Area
@@ -255,6 +255,8 @@ function main() {
 
   });
 
+  const horizontalLine = document.createElement('hr');
+  rightArea.append(horizontalLine);
   const visualStatusArea = document.createElement("div");
   visualStatusArea.classList.add("visualStatusArea");
   rightArea.append(visualStatusArea);
@@ -267,7 +269,7 @@ function main() {
   upperVisualStatusArea_Left.classList.add("upperVisualStatusArea_Left");
   const languageReport = document.createElement('iframe');
   languageReport.classList.add("languageReport");
-  languageReport.src=`https://github-readme-stats.vercel.app/api/top-langs/?username=${username}&layout=compact`;
+  languageReport.src=`https://github-readme-stats.vercel.app/api/top-langs/?username=${username}&layout=donut`;
   upperVisualStatusArea_Left.append(languageReport);
   upperVisualStatusArea.append(upperVisualStatusArea_Left);
 
@@ -275,7 +277,7 @@ function main() {
   upperVisualStatusArea_Right.classList.add("upperVisualStatusArea_Right");
   const contributionReport = document.createElement('iframe');
   contributionReport.classList.add("contributionReport");
-  contributionReport.src=`https://ssr-contributions-svg.vercel.app/_/${username}?weeks=25&widget_size=small`;
+  contributionReport.src=`https://github-readme-activity-graph.vercel.app/graph?username=${username}&theme=minimal`;
   upperVisualStatusArea_Right.append(contributionReport);
   upperVisualStatusArea.append(upperVisualStatusArea_Right);
 
