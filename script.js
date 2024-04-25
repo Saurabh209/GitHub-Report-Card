@@ -211,7 +211,7 @@ function main() {
     for(const repo of recivedData){
       repositories.push(repo.name);
     }
-    console.log(repositories.length);
+    // console.log(repositories.length);
 
 
     if(repositories.length>12){
@@ -285,6 +285,32 @@ function main() {
   lowerVisualStatusArea.classList.add("lowerVisualStatusArea");
   visualStatusArea.append(lowerVisualStatusArea);
 
+  const lowerVisualStatusArea_Left = document.createElement("div");
+  lowerVisualStatusArea_Left.classList.add("lowerVisualStatusArea_Left");
+  const gitStats0 = document.createElement("iframe");
+  gitStats0.classList.add("gitStats0");
+  gitStats0.src=`https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage`;
+  lowerVisualStatusArea_Left.append(gitStats0);
+  lowerVisualStatusArea.append(lowerVisualStatusArea_Left);
+
+  const lowerVisualStatusArea_Mid = document.createElement("div");
+  lowerVisualStatusArea_Mid.classList.add("lowerVisualStatusArea_Mid");
+  const gitStats1 = document.createElement("iframe");
+  gitStats1.classList.add("gitStats1");
+  gitStats1.src=`https://github-readme-stats.vercel.app/api/top-langs/?username=${username}&layout=donut`;
+  lowerVisualStatusArea_Mid.append(gitStats1);
+  lowerVisualStatusArea.append(lowerVisualStatusArea_Mid);
+
+  const lowerVisualStatusArea_Right = document.createElement("div");
+  lowerVisualStatusArea_Right.classList.add("lowerVisualStatusArea_Right");
+  const gitStats2 = document.createElement("iframe");
+  gitStats2.classList.add("gitStats2");
+  gitStats2.style.overflow = "hidden"; 
+  // gitStats2.setAttribute('seamless', '');
+  gitStats2.src=`https://ssr-contributions-svg.vercel.app/_/${username}?chart=3dbar&gap=0.6&scale=3&flatten=0&animation=fall&animation_duration=2&animation_delay=0.009&weeks=30&theme=totacolor&height=100`;
+  lowerVisualStatusArea_Right.append(gitStats2);
+  lowerVisualStatusArea.append(lowerVisualStatusArea_Right);
+
   
 
 
@@ -295,7 +321,7 @@ function main() {
 
 
   
-  // statusReport
+  // statusReport   Black
   // statusReportData.src=`https://my-stats-lemon.vercel.app/api?username=${username}&show_icons=true&theme=tokyonight&hide_border=true`;
   
   // Most language used 
