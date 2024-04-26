@@ -307,7 +307,7 @@ function main() {
   gitStats2.classList.add("gitStats2");
   gitStats2.style.overflow = "hidden"; 
   // gitStats2.setAttribute('seamless', '');
-  gitStats2.src=`https://ssr-contributions-svg.vercel.app/_/${username}?chart=3dbar&gap=0.6&scale=3&flatten=0&animation=fall&animation_duration=2&animation_delay=0.009&weeks=30&theme=totacolor&height=100`;
+  gitStats2.src=`https://ssr-contributions-svg.vercel.app/_/${username}?chart=3dbar&gap=0.6&scale=3&flatten=0&animation=fall&animation_duration=2&animation_delay=0.02&weeks=30&theme=totacolor&height=100`;
   lowerVisualStatusArea_Right.append(gitStats2);
   lowerVisualStatusArea.append(lowerVisualStatusArea_Right);
 
