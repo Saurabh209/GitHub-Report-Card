@@ -7,7 +7,7 @@ const button = document.querySelector(".button");
 const usernameInput = document.querySelector(".username");
 const usernameValidation = document.querySelector(".usernameValidation");
 const mainContainer = document.querySelector(".mainContainer");
-
+const navRight = document.querySelector(".navRight");
 const heading = document.querySelector("h1");
 
 //public variables
@@ -36,7 +36,6 @@ function main() {
         // mainContainer.classList.add('mainContent')
         // head.innerText=`No Such user found with username:${username}`;
         // mainContainer.append(head);
-        
         mainContainer.innerHTML=`<div class="main_wrapper">
         <div class="main">
           <div class="antenna">
@@ -102,6 +101,7 @@ function main() {
           <div class="text_4043">4</div>
         </div>
       </div>`;
+      
       throw new Error("No such user found");
 
       }
@@ -123,7 +123,19 @@ function main() {
   // newBtn.addEventListener("click", () => {
   //   // window.location.reload();
   // });
+
+  //  Download button
+
+  const downloadbtn = document.createElement('button');
+  downloadbtn.classList.add("button");
+  downloadbtn.innerText="Download";
+  navRight.prepend(downloadbtn);
   
+
+  
+
+
+
   // Main Container
   mainContainer.classList.add("ContainerVisible");
   mainContainer.style.backgroundColor='white'
