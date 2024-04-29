@@ -137,9 +137,6 @@ function main() {
 
 
 
-  
-
-  
 
 
 
@@ -157,17 +154,26 @@ function main() {
   userProfile.classList.add("userProfile");
   leftArea.appendChild(userProfile);
 
+  
+  const image = document.createElement("img");
+  image.src = responseData.avatar_url;
+  image.classList.add("imageConfig");
+  userProfile.appendChild(image);
+
+
   const nameContainer = document.createElement("div");
   nameContainer.classList.add('nameContainer');
   leftArea.appendChild(nameContainer);
 
   nameHolder = document.createElement('div');
+  nameHolder.innerText=`${responseData.name}`;
   nameHolder.classList.add("nameHolder");
   nameContainer.append(nameHolder);
 
  
 
   loginNameContainer = document.createElement('div');
+  loginNameContainer.innerText=`(${responseData.login})`;
   loginNameContainer.classList.add("loginNameContainer");
   nameContainer.append(loginNameContainer);
 
@@ -175,56 +181,37 @@ function main() {
   bioContainer.classList.add('bioContainer');
   leftArea.appendChild(bioContainer);
 
-  bioContainerValue = document.createElement('div');
-  bioContainerValue.classList.add('bioContainerValue');
-  bioContainer.appendChild(bioContainerValue);
 
-
-
-
- 
   //Followers section
   const followContainer = document.createElement('div');
   followContainer.classList.add('followContainer');
-  bioContainerValue.appendChild(followContainer);
-
+  bioContainer.appendChild(followContainer);
 
   followers = document.createElement('div');
+  followers.innerText=`Followers:${responseData.followers}`;
   followers.classList.add('followers');
+  followContainer.appendChild(followers);
 
   const line = document.createElement('hr');
   line.classList.add('horizontalLine');
-  
+  followContainer.appendChild(line);
 
   following = document.createElement('div');
+  following.innerText=`Following:${responseData.following}`;
   following.classList.add('following');
-  followContainer.appendChild(followers);
-  followContainer.appendChild(line);
   followContainer.appendChild(following);
 
   //Followers section end
 
-  const bio = document.createElement('div');
-  bio.classList.add('bio');
-  bioContainerValue.append(bio);  
+  const bioSection = document.createElement("div");
+  bioSection.classList.add("bioSection");
+  bioContainer.append(bioSection);
 
-  const bioHeading = document.createElement('h3');
-  bioHeading.classList.add("bioHeading");
-  bioHeading.innerHTML=`<h3>Bio</h3>`;
-  bio.append(bioHeading);
-
-
-  const image = document.createElement("img");
-  image.src = responseData.avatar_url;
-  image.classList.add("imageConfig");
-  userProfile.appendChild(image);
-
-  nameHolder.innerText=`${responseData.name}`;
-
-  loginNameContainer.innerText=`(${responseData.login})`;
-
-  followers.innerText=`Followers:${responseData.followers}`;
-  following.innerText=`Following:${responseData.following}`;
+  if(responseData.bio==null){
+    console.log("null bio");
+    }else{
+      console.log(responseData.bio);
+    }
 
 
 
@@ -245,8 +232,7 @@ function main() {
   
   rightArea.appendChild(statusReport);
 
-  
-  
+
 
   let promise1 = fetch(`https://api.github.com/users/${username}/repos`);
   promise1.then((res)=>{
@@ -357,9 +343,6 @@ function main() {
   lowerVisualStatusArea.append(lowerVisualStatusArea_Right);
 
   
-
-
-
 
     })
     .catch((error) => {
