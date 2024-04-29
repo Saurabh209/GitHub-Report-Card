@@ -295,10 +295,9 @@ h1{
   
   display: flex;
   align-items: center;
-  justify-content:;
   height: 40px;
   width: 100%;
-  /* border: 1px solid black; */
+  border: 1px solid black;
 }
 .followers{
   margin-left: 28px;
@@ -320,6 +319,17 @@ h1{
   text-align: center;
   /* border: 1px solid black; */
 }
+.bio{
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+}
+.bioHeading{
+  font-family: "Jersey 20", sans-serif;
+}
+
+
+
 .rightArea{
   height: 98%;
   width: 1110px;
@@ -461,4 +471,13 @@ margin: 0px;
   width: 100%;
   border: none;
   /* overflow-x: hidden; */
+}
+.button{
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }

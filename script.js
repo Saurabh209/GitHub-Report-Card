@@ -119,17 +119,24 @@ function main() {
   mainContainer.innerHTML=" ";
 
 
-  // //button click area
-  // newBtn.addEventListener("click", () => {
-  //   // window.location.reload();
-  // });
+  //button click area
 
-  //  Download button
+  // const button = false;
+  
+  // if(button==true){
+    
+  // }else{
+  
+  // const downloadbtn = document.createElement('button');
+  // downloadbtn.classList.add("button");
+  // downloadbtn.innerText="Download";
+  // navRight.prepend(downloadbtn);
+  // button = true;
+  // }
+ 
 
-  const downloadbtn = document.createElement('button');
-  downloadbtn.classList.add("button");
-  downloadbtn.innerText="Download";
-  navRight.prepend(downloadbtn);
+
+
   
 
   
@@ -172,6 +179,9 @@ function main() {
   bioContainerValue.classList.add('bioContainerValue');
   bioContainer.appendChild(bioContainerValue);
 
+
+
+
  
   //Followers section
   const followContainer = document.createElement('div');
@@ -193,6 +203,29 @@ function main() {
   followContainer.appendChild(following);
 
   //Followers section end
+
+  const bio = document.createElement('div');
+  bio.classList.add('bio');
+  bioContainerValue.append(bio);  
+
+  const bioHeading = document.createElement('h3');
+  bioHeading.classList.add("bioHeading");
+  bioHeading.innerHTML=`<h3>Bio</h3>`;
+  bio.append(bioHeading);
+
+
+  const image = document.createElement("img");
+  image.src = responseData.avatar_url;
+  image.classList.add("imageConfig");
+  userProfile.appendChild(image);
+
+  nameHolder.innerText=`${responseData.name}`;
+
+  loginNameContainer.innerText=`(${responseData.login})`;
+
+  followers.innerText=`Followers:${responseData.followers}`;
+  following.innerText=`Following:${responseData.following}`;
+
 
 
   //Right Container
@@ -328,45 +361,6 @@ function main() {
 
 
 
-
-
-
-
-  
-  // statusReport   Black
-  // statusReportData.src=`https://my-stats-lemon.vercel.app/api?username=${username}&show_icons=true&theme=tokyonight&hide_border=true`;
-  
-  // Most language used 
-  // statusReportData.src=`https://github-readme-stats.vercel.app/api/top-langs/?username=${username}&hide_progress=false`;
- 
-  //Most languages used 
-  // statusReportData.src=`https://github-readme-stats.vercel.app/api/top-langs/?username=${username}&layout=compact`;
- 
-  // Useless dot graph
-  // statusReportData.src=`https://ssr-contributions-svg.vercel.app/chart=calendar/?username=${username}/CatsJuice?chart=calendar&format=svg`;
-  
-  //Streak chart
-  // statusReportData.src=`https://github-readme-streak-stats.herokuapp.com?user=${username}&card_width=486`;
-
-  // contribution graph
-  // statusReportData.src=`https://github-readme-activity-graph.vercel.app/graph?username=${username}&theme=github-compact`;
-
-
-
-
-
-
-      const image = document.createElement("img");
-      image.src = responseData.avatar_url;
-      image.classList.add("imageConfig");
-      userProfile.appendChild(image);
-
-      nameHolder.innerText=`${responseData.name}`;
-
-      loginNameContainer.innerText=`(${responseData.login})`;
-
-      followers.innerText=`Followers:${responseData.followers}`;
-      following.innerText=`Following:${responseData.following}`;
     })
     .catch((error) => {
       console.log(error);

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Download Div as Image</title>
+  <style>
+    #container {
+      width: 400px;
+      height: 300px;
+      border: 1px solid black;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h2>This is a div container</h2>
+    <p>Click the button below to download this div as an image.</p>
+  </div>
+  <button onclick="downloadDivAsImage()">Download</button>
+
+  <script>
+    function downloadDivAsImage() {
+      // Get the div container
+      const container = document.getElementById('container');
+
+      // Create a canvas element
+      const canvas = document.createElement('canvas');
+      canvas.width = container.offsetWidth;
+      canvas.height = container.offsetHeight;
+
+      // Draw the div container on the canvas
+      const ctx = canvas.getContext('2d');
+      ctx.fillStyle = '#FFFFFF'; // Set the background color of the canvas
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      html2canvas(container).then(canvas => {
+        // Convert the canvas to a data URL
+        const dataURL = canvas.toDataURL('image/png');
+
+        // Create a temporary link element
+        const link = document.createElement('a');
+        link.download = 'container.png';
+        link.href = dataURL;
+
+        // Append the link to the document and click it to initiate the download
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+    }
+  </script>
+
+  <!-- Include the html2canvas library -->
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</body>
+</html>
