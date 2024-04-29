@@ -279,8 +279,8 @@ h1{
 }
 .bioContainer{
   display: flex;
+  justify-content: flex-start;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   width: 100%;
   height: 296px;
@@ -315,10 +315,36 @@ h1{
   text-align: center;
   /* border: 1px solid black; */
 }
+
+.hr2{
+  margin-left:17px;
+  width:270px;
+  color: black;
+}
 .bioSection{
-  height: 100%;
+  margin-left: 5px;
+  width: 290px;
+  /* border: 1px solid black; */
+}
+.hr3{
+  margin-left:17px;
+  width:270px;
+  color: black;
+}
+.company{
+  margin-left: 17px;
+  display: flex;
   width: 100%;
-  border: 1px solid black;
+}
+.companyLogo{
+  width: 35px;
+  background-size:contain;
+}
+.companyName{
+  display: flex;
+  justify-content:left;
+  align-items: center;
+  font-size: 12px;
 }
 
 

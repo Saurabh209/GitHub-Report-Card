@@ -203,15 +203,46 @@ function main() {
 
   //Followers section end
 
+  const hr2 = document.createElement('hr');
+  hr2.classList.add("hr2");
+  bioContainer.append(hr2);
+
+
+  // Bio Section
   const bioSection = document.createElement("div");
   bioSection.classList.add("bioSection");
   bioContainer.append(bioSection);
 
-  if(responseData.bio==null){
-    console.log("null bio");
+  if(responseData.bio!=null){
+      bioSection.innerHTML=`<b>Bio: </b>${responseData.bio}`;
     }else{
-      console.log(responseData.bio);
+      bioSection.innerHTML=`<b>Bio:</b>Empty`;
     }
+
+    //Company section
+    const hr3 = document.createElement('hr');
+    hr3.classList.add("hr3");
+    bioContainer.append(hr3);
+
+    const company = document.createElement("div");
+    bioContainer.append(company);
+
+    if(responseData.company!=null){
+
+      company.classList.add("company");
+      const companyLogo = document.createElement('img');
+      companyLogo.src="company.png";
+      companyLogo.classList.add("companyLogo");
+      company.append(companyLogo);
+
+      const companyName = document.createElement("div");
+      companyName.classList.add("companyName");
+      companyName.innerHTML=`${responseData.company}`;
+      company.append(companyName);
+      
+    }
+
+
 
 
 
