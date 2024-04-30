@@ -22,7 +22,9 @@ let following;
 let statusReportData;
 let repoCount;
 let repoHolder;
+let downloadbtn;
 let downloadButton=false;
+
 // Main code
 
 function main() {
@@ -124,13 +126,65 @@ function main() {
   
   
   if(downloadButton!=true){
-  const downloadbtn = document.createElement('button');
+  downloadbtn = document.createElement('button');
   downloadbtn.classList.add("buttonDownload");
   downloadbtn.innerText="Download";
   navRight.prepend(downloadbtn);
   downloadButton = true;
   }
- 
+
+    const downloadContainer = document.querySelector(".mainContainer");
+    // const downloadButt = document.querySelector(".buttonDownload");
+
+    // downloadbtn.addEventListener('click', ()=>{
+    // const canvas = document.createElement('canvas');
+    // const context = canvas.getContext('2d');
+
+    // canvas.width = downloadContainer.offsetWidth;
+    // canvas.height = downloadContainer.offsetWidth;
+
+    // context.drawImage(downloadContainer,0,0);
+
+    // const downloadLink = document.createElement('a');
+    // downloadLink.download = `${username}'s ReportCard.png`;
+    // downloadLink.href = canvas.toDataURL('image/png');
+
+    // downloadLink.click();
+
+    downloadbtn.addEventListener('click', () => {
+      html2canvas(downloadContainer, {
+        allowTaint: true,
+        useCORS: true,
+        imageTimeout: 0,
+        logging: false,
+      }).then(function(canvas) {
+        const downloadLink = document.createElement('a');
+        downloadLink.download = `${username}'s ReportCard.png`;
+        downloadLink.href = canvas.toDataURL('image/png');
+        downloadLink.click();
+      });
+
+
+
+    });
+  
+
+    
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -276,8 +330,7 @@ function main() {
     }
 
 
-    // Account Links
-    const linkedin = document.querySelector
+
 
 
 
@@ -438,3 +491,5 @@ function switcher() {
 
 button.addEventListener("click", onclick);
 toggleSwitch.addEventListener("click", switcher);
+
+

@@ -346,7 +346,6 @@ h1{
 }
 
 .location{
-  margin-left: 5px;
   display: flex;
   width: 100%;
   /* border: 1px solid black; */
