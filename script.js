@@ -22,6 +22,7 @@ let following;
 let statusReportData;
 let repoCount;
 let repoHolder;
+let downloadButton=false;
 // Main code
 
 function main() {
@@ -120,19 +121,15 @@ function main() {
 
 
   //button click area
-
-  // const button = false;
   
-  // if(button==true){
-    
-  // }else{
   
-  // const downloadbtn = document.createElement('button');
-  // downloadbtn.classList.add("button");
-  // downloadbtn.innerText="Download";
-  // navRight.prepend(downloadbtn);
-  // button = true;
-  // }
+  if(downloadButton!=true){
+  const downloadbtn = document.createElement('button');
+  downloadbtn.classList.add("buttonDownload");
+  downloadbtn.innerText="Download";
+  navRight.prepend(downloadbtn);
+  downloadButton = true;
+  }
  
 
 
@@ -259,6 +256,23 @@ function main() {
 
     location.append(locationName);
 
+    }
+
+    if(responseData.twitter_username != null){
+      const twitter = document.createElement("div");
+      twitter.classList.add("twitter");
+      bioContainer.append(twitter);
+
+
+      const twitterLogo = document.createElement("img");
+      twitterLogo.src="twitter.png";
+      twitterLogo.classList.add("twitterLogo");
+      twitter.append(twitterLogo);
+
+      const twitterUsername = document.createElement("div");
+      twitterUsername.innerHTML=`${responseData.twitter_username}`
+      twitterUsername.classList.add("twitterUsername")
+      twitter.append(twitterUsername);
     }
 
 
