@@ -238,10 +238,32 @@ function main() {
       const companyName = document.createElement("div");
       companyName.classList.add("companyName");
       companyName.innerHTML=`${responseData.company}`;
-      company.append(companyName);
-      
+      company.append(companyName); 
     }
 
+
+    // Address
+    if(responseData.location!=null){
+    const location = document.createElement("div");
+    location.classList.add("location");
+    bioContainer.append(location);
+
+    const locationLogo = document.createElement("img");
+    locationLogo.src="location.png";
+    locationLogo.classList.add("locationLogo");
+    location.append(locationLogo);
+
+    const locationName = document.createElement("div");
+    locationName.classList.add("locationName"); 
+    locationName.innerHTML=`${responseData.location}`;
+
+    location.append(locationName);
+
+    }
+
+
+    // Account Links
+    const linkedin = document.querySelector
 
 
 
