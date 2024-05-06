@@ -151,22 +151,22 @@ function main() {
 
     // downloadLink.click();
 
-    downloadbtn.addEventListener('click', () => {
-      html2canvas(downloadContainer, {
-        allowTaint: true,
-        useCORS: true,
-        imageTimeout: 0,
-        logging: false,
-      }).then(function(canvas) {
-        const downloadLink = document.createElement('a');
-        downloadLink.download = `${username}'s ReportCard.png`;
-        downloadLink.href = canvas.toDataURL('image/png');
-        downloadLink.click();
-      });
+    // downloadbtn.addEventListener('click', () => {
+    //   html2canvas(downloadContainer, {
+    //     allowTaint: true,
+    //     useCORS: true,
+    //     imageTimeout: 0,
+    //     logging: false,
+    //   }).then(function(canvas) {
+    //     const downloadLink = document.createElement('a');
+    //     downloadLink.download = `${username}'s ReportCard.png`;
+    //     downloadLink.href = canvas.toDataURL('image/png');
+    //     downloadLink.click();
+    //   });
 
 
 
-    });
+    // });
   
 
     
