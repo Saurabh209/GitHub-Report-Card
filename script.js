@@ -133,41 +133,29 @@ function main() {
   downloadButton = true;
   }
 
-    const downloadContainer = document.querySelector(".mainContainer");
-    // const downloadButt = document.querySelector(".buttonDownload");
+const captureDiv = document.querySelector('mainContainer');
 
-    // downloadbtn.addEventListener('click', ()=>{
-    // const canvas = document.createElement('canvas');
-    // const context = canvas.getContext('2d');
+downloadbtn.addEventListener('click', downloadDivScreenshot);
 
-    // canvas.width = downloadContainer.offsetWidth;
-    // canvas.height = downloadContainer.offsetWidth;
+function downloadDivScreenshot() {
+  const canvas = document.createElement('canvas');
+  const rect = captureDiv.getBoundingClientRect();
+  canvas.width = rect.width;
+  canvas.height = rect.height;
+  const context = canvas.getContext('2d');
 
-    // context.drawImage(downloadContainer,0,0);
-
-    // const downloadLink = document.createElement('a');
-    // downloadLink.download = `${username}'s ReportCard.png`;
-    // downloadLink.href = canvas.toDataURL('image/png');
-
-    // downloadLink.click();
-
-    // downloadbtn.addEventListener('click', () => {
-    //   html2canvas(downloadContainer, {
-    //     allowTaint: true,
-    //     useCORS: true,
-    //     imageTimeout: 0,
-    //     logging: false,
-    //   }).then(function(canvas) {
-    //     const downloadLink = document.createElement('a');
-    //     downloadLink.download = `${username}'s ReportCard.png`;
-    //     downloadLink.href = canvas.toDataURL('image/png');
-    //     downloadLink.click();
-    //   });
+  // Render the div content onto the canvas
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  html2canvas(captureDiv).then(function(canvas) {
+    const imgData = canvas.toDataURL('image/png');
+    const link = document.createElement('a');
+    link.download = 'div-screenshot.png';
+    link.href = imgData;
+    link.click();
+  });
+}
 
 
-
-    // });
-  
 
     
 
@@ -476,7 +464,7 @@ function main() {
 function onclick() {
   username = usernameInput.value.trim();
   if (username === "") {
-    alert("abe username to fill krle bkl");
+    alert("Fill UserName");
   } else {
     // button.remove();
     main();
