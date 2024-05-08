@@ -133,27 +133,27 @@ function main() {
   downloadButton = true;
   }
 
-const captureDiv = document.querySelector('mainContainer');
+// const captureDiv = document.querySelector('mainContainer');
 
-downloadbtn.addEventListener('click', downloadDivScreenshot);
+// downloadbtn.addEventListener('click', downloadDivScreenshot);
 
-function downloadDivScreenshot() {
-  const canvas = document.createElement('canvas');
-  const rect = captureDiv.getBoundingClientRect();
-  canvas.width = rect.width;
-  canvas.height = rect.height;
-  const context = canvas.getContext('2d');
+// function downloadDivScreenshot() {
+//   const canvas = document.createElement('canvas');
+//   const rect = captureDiv.getBoundingClientRect();
+//   canvas.width = rect.width;
+//   canvas.height = rect.height;
+//   const context = canvas.getContext('2d');
 
-  // Render the div content onto the canvas
-  context.clearRect(0, 0, canvas.width, canvas.height);
-  html2canvas(captureDiv).then(function(canvas) {
-    const imgData = canvas.toDataURL('image/png');
-    const link = document.createElement('a');
-    link.download = 'div-screenshot.png';
-    link.href = imgData;
-    link.click();
-  });
-}
+//   // Render the div content onto the canvas
+//   context.clearRect(0, 0, canvas.width, canvas.height);
+//   html2canvas(captureDiv).then(function(canvas) {
+//     const imgData = canvas.toDataURL('image/png');
+//     const link = document.createElement('a');
+//     link.download = 'div-screenshot.png';
+//     link.href = imgData;
+//     link.click();
+//   });
+// }
 
 
 
