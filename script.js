@@ -354,7 +354,7 @@ function main() {
 
 
     if(repositories.length>12){
-      mainContainer.style.width='1374px';
+      mainContainer.style.width='94%';
       // statusReport.style.overflow="scroll";
       for(let index = 0; index<12; index++){
         repoHolder = document.createElement('div');
@@ -380,7 +380,7 @@ function main() {
 
 
     }else{
-      mainContainer.style.width='1374px';
+      mainContainer.style.width='94%';
     for(let index =0; index<(repositories.length); index++){
       repoHolder = document.createElement('div');
       let item = document.createElement('iframe');
@@ -450,10 +450,8 @@ function main() {
   lowerVisualStatusArea_Right.append(gitStats2);
   lowerVisualStatusArea.append(lowerVisualStatusArea_Right);
 
-  
-
-    })
-    .catch((error) => {
+})
+.catch((error) => {
       console.log(error);
     });
 }

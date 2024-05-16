@@ -211,6 +211,7 @@ h1{
   justify-content: center;
   height:685px;
   border-radius: 10px;
+  width: 93%;
   /* background-color: #f1efef; */
   /* rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset  */
   
@@ -413,6 +414,7 @@ h1{
   display: flex;
   flex-wrap: wrap;
   max-height: 240px;
+  overflow: hidden;
   /* align-items: center;
   justify-content: center;
   height: 250px; */
