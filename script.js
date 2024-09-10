@@ -332,7 +332,7 @@ function main() {
   repoCountHolder.classList.add('repoCountHolder');
   repoCount = document.createElement('div');
   repoCount.classList.add('repoCount');
-  repoCount.innerHTML=`<a href ="https://github.com/${username}?tab=repositories">Total Repositories: ${responseData.public_repos}</a>`;
+  repoCount.innerHTML=`<a href ="https://github.com/${username}?tab=repositories">View All Repositories: ${responseData.public_repos}</a>`;
   repoCountHolder.append(repoCount);
   rightArea.append(repoCountHolder);
   const statusReport = document.createElement('div');
